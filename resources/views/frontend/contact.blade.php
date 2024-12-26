@@ -40,21 +40,22 @@
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="get-in-touch-form">
                     <h3>Request a Callback</h3>
-                    <form id="callbackForm">
+                    <form action="{{ route('store_contact') }}" method="POST" id="callbackForm">
+                        @csrf
                         <div class="cnt-form">
-                            <input class="form-control" type="text" id="name" placeholder="Your Name" maxlength="50" required>
+                            <input class="form-control" type="text" id="name" name="name" placeholder="Your Name" maxlength="50">
                             <span class="error-message" id="nameError"></span>
                         </div>
                         <div class="cnt-form">
-                            <input class="form-control" type="tel" id="phone" placeholder="Phone No" maxlength="11" required>
+                            <input class="form-control" type="tel" id="phone" name="phone" placeholder="Phone No" maxlength="11">
                             <span class="error-message" id="phoneError"></span>
                         </div>
                         <div class="cnt-form">
-                            <input class="form-control" type="email" id="email" placeholder="Email" required>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Email">
                             <span class="error-message" id="emailError"></span>
                         </div>
                         <div class="cnt-form">
-                            <textarea class="form-control" id="message" cols="30" rows="6" placeholder="Your Message" required></textarea>
+                            <textarea class="form-control" id="message" name="message" cols="30" rows="6" placeholder="Your Message"></textarea>
                             <span class="error-message" id="messageError"></span>
                         </div>
                         <button class="contact_page_button">

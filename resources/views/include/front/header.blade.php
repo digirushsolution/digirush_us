@@ -270,7 +270,7 @@
                            </ul>
                        </li>
                       
-                       <li><a href="#">Case Studies</a></li>
+                       <li><a href="{{ route('case_studies') }}">Case Studies</a></li>
                        <li><a href="#">Blog</a></li>
                        
                        <li><a href="{{ route('contact') }}">Contact</a></li>

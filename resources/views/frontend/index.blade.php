@@ -1,6 +1,12 @@
 @extends('include.front.app')
 @section('content')
 
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 <section class="home_banner">
     <div class="container">
         <div class="row">
@@ -11,7 +17,7 @@
                     belief in the transformative potential of technology for businesses.
                 </p>
                 <button class="home_button">
-                    <a href="#" class="button">
+                    <a href="{{ route('web_service') }}" class="button">
                     <div class="backdrop" bis_skin_checked="1">
                         <span>Explore Our Services </span>
                     </div>
@@ -96,7 +102,7 @@
              <p>Quality and customer satisfaction will be our top priority to ensure that our services exceed expectations. Digi Rush Solutions is here to help you find an affordable digital marketing services​ provider or a fantastic website design company in the USA.
              </p>
              <button class="aboutus_button">
-                <a href="#" class="button">
+                <a href="{{ route('about_us') }}" class="button">
                    <div class="backdrop" bis_skin_checked="1">
                       <span>About Us</span>
                    </div>
@@ -129,7 +135,7 @@
                 </p>
              </div>
              <div class="our_services_pagelink">
-                <a href="#"><i class="fa-solid fa-share"></i></a>
+                <a href="{{ route('digital_marketing') }}"><i class="fa-solid fa-share"></i></a>
              </div>
           </div>
        </div>
@@ -144,7 +150,7 @@
                 </p>
              </div>
              <div class="our_services_pagelink">
-                <a href="#"><i class="fa-solid fa-share"></i></a>
+                <a href="{{ route('web_development') }}"><i class="fa-solid fa-share"></i></a>
              </div>
           </div>
        </div>
@@ -159,7 +165,7 @@
                 </p>
              </div>
              <div class="our_services_pagelink">
-                <a href="#"><i class="fa-solid fa-share"></i></a>
+                <a href="{{ route('web_design') }}"><i class="fa-solid fa-share"></i></a>
              </div>
           </div>
        </div>
@@ -177,7 +183,7 @@
              </p>
           </div>
           <button class="why_choose_button">
-             <a href="#" class="button">
+             <a href="{{ route('web_service') }}" class="button">
                 <div class="backdrop" bis_skin_checked="1">
                    <span>Explore Services</span>
                 </div>
@@ -204,7 +210,7 @@
              <p>Digi Rush Solutions: Empowering your Digital Vision by Website Building and Brand Strengthening towards a Better Online Reach. We believe in tried approaches and out  of the box solutions to generate results that will fuel your business. Let's unlock your potential together in the digital world.</p>
           </div>
           <button class="video_popup_button">
-             <a href="#" class="button">
+             <a href="{{ route('contact') }}" class="button">
                 <div class="backdrop" bis_skin_checked="1">
                    <span>Contact Us Today!</span>
                 </div>
@@ -300,7 +306,7 @@
        <div class="col-md-6">
           <div class="projects_sec_btn float-end">
              <button class="projects_button">
-                <a href="#" class="button">
+                <a href="{{ route('web_service') }}" class="button">
                    <div class="backdrop" bis_skin_checked="1">
                       <span>Explore More</span>
                    </div>
@@ -456,24 +462,26 @@
        <div class="col-lg-6 col-md-6 col-12">
           <div class="get-in_touch_form">
              <h3>Request a Callback</h3>
-             <form id="callbackForm">
+             <form action="{{ route('store') }}" method="POST" id="callbackForm">
+               @csrf
                 <div class="cnt_form">
-                   <input class="form-control" type="text" id="name" placeholder="Your Name" maxlength="50"
-                      required>
+                  <input type="hidden" name="form_type" value="home">
+                   <input class="form-control" type="text" id="name" name="name" placeholder="Your Name" maxlength="50"
+                      >
                    <span class="error-message" id="nameError"></span>
                 </div>
                 <div class="cnt_form">
-                   <input class="form-control" type="tel" id="phone" placeholder="Phone No" maxlength="11"
-                      required>
+                   <input class="form-control" type="tel" id="phone" name="phone" placeholder="Phone No" maxlength="11"
+                      >
                    <span class="error-message" id="phoneError"></span>
                 </div>
                 <div class="cnt_form">
-                   <input class="form-control" type="email" id="email" placeholder="Email" required>
+                   <input class="form-control" type="email" id="email" name="email" placeholder="Email" >
                    <span class="error-message" id="emailError"></span>
                 </div>
                 <div class="cnt_form">
                    <textarea class="form-control" id="message" cols="30" rows="6"
-                      placeholder="Your Message" required></textarea>
+                      placeholder="Your Message" name="message" ></textarea>
                    <span class="error-message" id="messageError"></span>
                 </div>
                 <div class="get-in-touch-form-btn">

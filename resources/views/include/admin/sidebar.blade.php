@@ -1,17 +1,18 @@
 <aside class="sidebar-wrapper" data-simplebar="true">
           <div class="sidebar-header">
             <div>
-              <img src="" class="logo-icon" alt="logo icon">
+              <img src="{{ asset('assets/image/header_logo.png')}}" width="90" alt="digirusholution">
             </div>
             <div>
-              <h4 class="logo-text">Skodash</h4>
+              <h4 class="logo-text">Digirush<sup>US</sup></h4>
             </div>
             <div class="toggle-icon ms-auto"><i class="bi bi-chevron-double-left"></i>
             </div>
           </div>
           <ul class="metismenu" id="menu">
             <li>
-              <a href="{{route('admindashboard')}}" class="has-arrow">
+              {{-- <a href="{{route('admindashboard')}}" class="has-arrow"> --}}
+                <a href="{{route('admindashboard')}}">
                 <div class="parent-icon"><i class="bi bi-house-door"></i>
                 </div>
                 <div class="menu-title">Dashboard</div>

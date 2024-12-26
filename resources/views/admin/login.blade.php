@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="{{ asset('admin/images/png/favicon.jpg')}}" type="image/png" />
+	<link rel="icon" href="{{ asset('admin/images/DigiRush_Favicon.png')}}" type="image/png" />
 	<link href="{{ asset('admin/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
 	<link href="{{ asset('admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
 	<link href="{{ asset('admin/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
@@ -15,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 	<link href="{{ asset('admin/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('admin/css/icons.css') }}" rel="stylesheet">
-	<title>Kalari Factory</title>
+	<title>Digirush</title>
 </head>
 
 <body class="">
@@ -28,10 +28,10 @@
 							<div class="card-body">
 								<div class="p-4">
 									<div class="mb-3 text-center">
-									    <img src="{{ asset('assets/images/png/favicon.jpg')}}" width="120" alt="digirusholution">
+									    <img src="{{ asset('assets/image/header_logo.png')}}" width="120" alt="digirusholution">
 									</div>
 									<div class="text-center mb-4">
-										<h5 class="">The Kalari Factory</h5>
+										<h5 class="">Digirush US</h5>
 										<p class="mb-0">Please log in to your account</p>
 									</div>
 									<div class="form-body">

@@ -80,4 +80,10 @@ Route::get('/content_Management_Marketing', [UserController::class, 'content_man
 Route::get('/web_service', [UserController::class, 'web_service'] )->name('web_service');
 Route::get('/web_development', [UserController::class, 'web_development'] )->name('web_development');
 Route::get('/web_design', [UserController::class, 'web_design'])->name('web_design');
+Route::get('/case_studies', [UserController::class, 'case_studies'])->name('case_studies');
+Route::get('/case_study_single', [UserController::class, 'case_study_single'])->name('case_study_single');
 Route::get('/contact', [UserController::class, 'contact'])->name('contact');
+
+//saving front-end data
+Route::post('/store', [UserController::class, 'store_enquiry'])->name('store');
+Route::post('/store_contact', [UserController::class, 'store_contact'])->name('store_contact');

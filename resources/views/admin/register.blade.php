@@ -5,7 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{ asset('admin/images/favicon-32x32.png') }}" type="image/png" />
+    {{-- <link rel="icon" href="{{ asset('admin/images/favicon-32x32.png') }}" type="image/png" /> --}}
+	<link rel="icon" href="{{ asset('admin/images/DigiRush_Favicon.png')}}" type="image/png" />
+
     <!-- Bootstrap CSS -->
     <link href="{{ asset('admin/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('admin/css/bootstrap-extended.css') }}" rel="stylesheet" />
@@ -16,7 +18,7 @@
     <!-- loader-->
     <link href="{{ asset('admin/css/pace.min.css') }}" rel="stylesheet" />
 
-    <title>Registration - Bootstrap Template</title>
+    <title>Registration</title>
 </head>
 
 <body>

@@ -1,6 +1,6 @@
 @extends('include.front.app')
 @section('content')
-<section class="about_banner_sec" style="background-image: url(image/about_banner_img.png);">
+<section class="about_banner_sec" style="background-image: url({{ asset('assets/image/about_banner_img.png')}});">
     <div class="page-header-shape"></div>
     <div class="container">
       <div class="row align-items-center">
@@ -15,21 +15,23 @@
                 <div class="banner_us_forms">
                     <div class="get-in_touch_form">
                         <h3>Request a Callback</h3>
-                        <form id="callbackForm">
+                        <form id="callbackForm" action="{{ route('store') }}" method="POST">
+                            @csrf
                             <div class="cnt_form">
-                                <input class="form-control" type="text" id="name" placeholder="Your Name" maxlength="50" required>
+                                <input type="hidden" name="form_type" value="digital_marketing">
+                                <input class="form-control" type="text" id="name" name="name" placeholder="Your Name" maxlength="50" required>
                                 <span class="error-message" id="nameError"></span>
                             </div>
                             <div class="cnt_form">
-                                <input class="form-control" type="tel" id="phone" placeholder="Phone No" maxlength="11" required>
+                                <input class="form-control" type="tel" name="phone" id="phone" placeholder="Phone No" maxlength="11" required>
                                 <span class="error-message" id="phoneError"></span>
                             </div>
                             <div class="cnt_form">
-                                <input class="form-control" type="email" id="email" placeholder="Email" required>
+                                <input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
                                 <span class="error-message" id="emailError"></span>
                             </div>
                             <div class="cnt_form">
-                                <textarea class="form-control" id="message" cols="30" rows="6" placeholder="Your Message" required></textarea>
+                                <textarea class="form-control" id="message" name="message" cols="30" rows="6" placeholder="Your Message" required></textarea>
                                 <span class="error-message" id="messageError"></span>
                             </div>
                             <div class="get-in-touch-form-btn">
@@ -76,14 +78,14 @@
            
             <div class="col-md-6">
                 <div class="under_service_img">
-                    <img src="image/services-main-hero.webp" alt="">
+                    <img src="{{asset('assets/image/services-main-hero.webp') }}" alt="">
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="featured_services_slider padding"  style="background-image: url(image/featured_background.webp);">
+<section class="featured_services_slider padding"  style="background-image: url({{ asset('assets/image/featured_background.webp') }});">
     <div class="container">
         <div class="row">
             <div class="col-md-6 mb-4">
@@ -123,7 +125,7 @@
                     <div class="imageBox aos-init" data-aos="zoom-in-up">
                         <div class="portfolio-item">
                         <a data-fancybox="gallery" href="https://loansuvidhaa.com/" tabindex="0">
-                     <img src="image/loan_suvidha (1).png" alt="Maintenance">
+                     <img src="{{asset('assets/image/loan_suvidha (1).png') }}" alt="Maintenance">
                         </a>
                         </div>
                     </div>
@@ -154,7 +156,7 @@
                     <div class="imageBox aos-init" data-aos="zoom-in-up">
                         <div class="portfolio-item">
                         <a data-fancybox="gallery" href="https://greatmedia.in/" tabindex="0">
-                     <img src="image/great_media_in (1).png" alt="Maintenance">
+                     <img src="{{asset('assets/image/great_media_in (1).png') }}" alt="Maintenance">
                         </a>
                         </div>
                     </div>
@@ -185,7 +187,7 @@
                     <div class="imageBox aos-init" data-aos="zoom-in-up">
                         <div class="portfolio-item">
                         <a data-fancybox="gallery" href="https://babycorngroup.com/" tabindex="0">
-                     <img src="image/baby_corn_group (1).png" alt="Maintenance">
+                     <img src="{{asset('assets/image/baby_corn_group (1).png') }}" alt="Maintenance">
                         </a>
                         </div>
                     </div>
@@ -210,7 +212,7 @@
                         <div class="col-md-6">
                             <div class="main_flx_under">
                                 <div class="img_flx">
-                                    <img src="image/we_do_get1.webp" alt="">
+                                    <img src="{{asset('assets/image/we_do_get1.webp') }}" alt="">
                                 </div>
                                 <div class="main_flx_txt">
                                     <h3>Keyword Research</h3>
@@ -222,7 +224,7 @@
                         <div class="col-md-6">
                             <div class="main_flx_under">
                                 <div class="img_flx">
-                                    <img src="image/we_do_get2.webp" alt="">
+                                    <img src="{{asset('assets/image/we_do_get2.webp') }}" alt="">
                                 </div>
                                 <div class="main_flx_txt">
                                     <h3>SEO</h3>
@@ -234,7 +236,7 @@
                         <div class="col-md-6">
                             <div class="main_flx_under">
                                 <div class="img_flx">
-                                    <img src="image/we_do_get3.webp" alt="">
+                                    <img src="{{asset('assets/image/we_do_get3.webp') }}" alt="">
                                 </div>
                                 <div class="main_flx_txt">
                                     <h3>Local SEO</h3>
@@ -245,7 +247,7 @@
                         <div class="col-md-6">
                             <div class="main_flx_under">
                                 <div class="img_flx">
-                                    <img src="image/we_do_get4.webp" alt="">
+                                    <img src="{{asset('assets/image/we_do_get4.webp') }}" alt="">
                                 </div>
                                 <div class="main_flx_txt">
                                     <h3>PPC Advertising</h3>
@@ -257,7 +259,7 @@
                         <div class="col-md-6">
                             <div class="main_flx_under">
                                 <div class="img_flx">
-                                    <img src="image/we_do_get5.webp" alt="">
+                                    <img src="{{asset('assets/image/we_do_get5.webp') }}" alt="">
                                 </div>
                                 <div class="main_flx_txt">
                                     <h3>SMM</h3>
@@ -268,7 +270,7 @@
                         <div class="col-md-6">
                             <div class="main_flx_under">
                                 <div class="img_flx">
-                                    <img src="image/we_do_get6.webp" alt="">
+                                    <img src="{{asset('assets/image/we_do_get6.webp') }}" alt="">
                                 </div>
                                 <div class="main_flx_txt">
                                     <h3>Content Marketing</h3>
@@ -288,7 +290,7 @@
        <div class="row">
         <div class="col-md-5">
             <div class="custom_design_">
-                <img src="image/services-main-hero.webp" alt="">
+                <img src="{{asset('assets/image/services-main-hero.webp') }}" alt="">
             </div>
         </div>
         <div class="col-md-7">

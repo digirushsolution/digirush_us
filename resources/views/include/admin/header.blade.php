@@ -20,7 +20,11 @@
                         data-bs-toggle="dropdown">
                         <div class="user-setting d-flex align-items-center gap-1">
                             <img src="{{ asset('admin/images/avatars/avatar-1.png') }}" class="user-img" alt="">
+                            @if(Auth::user()->name == '')
                             <div class="user-name d-none d-sm-block">Jhon Deo</div>
+                            @else
+                            <div class="user-name d-none d-sm-block">{{ Auth::user()->name }}</div>
+                            @endif
                         </div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -30,7 +34,11 @@
                                     <img src="{{ asset('admin/images/avatars/avatar-1.png') }}" alt=""
                                         class="rounded-circle" width="60" height="60">
                                     <div class="ms-3">
+                                        @if(Auth::user()->name == '')
                                         <h6 class="mb-0 dropdown-user-name">Jhon Deo</h6>
+                                        @else
+                                        <h6 class="mb-0 dropdown-user-name">{{ Auth::user()->name }}</h6>
+                                        @endif
                                         <small class="mb-0 dropdown-user-designation text-secondary">HR Manager</small>
                                     </div>
                                 </div>
@@ -39,7 +47,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li>
+                        {{-- <li>
                             <a class="dropdown-item" href="pages-user-profile.html">
                                 <div class="d-flex align-items-center">
                                     <div class="setting-icon"><i class="bi bi-person-fill"></i></div>
@@ -78,7 +86,7 @@
                                     <div class="setting-text ms-3"><span>Downloads</span></div>
                                 </div>
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a class="dropdown-item" href="#">
                                 <div class="d-flex align-items-center">
